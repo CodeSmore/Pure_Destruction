@@ -103,6 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileValue: 1
+  collectable: {fileID: 1468659755258118, guid: a8771decf1ccce74c83b11b6b13be3ad,
+    type: 2}
 --- !u!212 &212416809760908332
 SpriteRenderer:
   m_ObjectHideFlags: 1

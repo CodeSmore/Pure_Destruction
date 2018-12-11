@@ -8,7 +8,6 @@ public class LauncherController : MonoBehaviour {
     public float rangeToSpawn = 1.2f;
 
     public GameObject projectile;
-    public GameObject parent;
 
 	// Use this for initialization
 	void Start () {

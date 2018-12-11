@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ProjectileController : MonoBehaviour {
     
     public int projectileValue = 1;
+    public GameObject collectable;
 
     private Polygon2D destructionPolygon;
     private Destruction2DLayer destructionLayer;
@@ -25,8 +26,6 @@ public class ProjectileController : MonoBehaviour {
         if (collider.tag == "Target")
         {
             DamageTarget(collider);
-            PlayerStats.InHandDollars += TargetController.targetHitReward;
-            UIController.UpdateUI();
             
             Destroy(gameObject);
         } 
@@ -42,7 +41,11 @@ public class ProjectileController : MonoBehaviour {
             if (circle.radius <= 0)
             {
                 circle.radius = 0;
+                // TODO spawn paticle system and/or sound effect that shows no dmg is done
+                return;
             }
+
+            SpawnCollectable(circle.radius);
 
             var newPolygon = new Polygon2D(Polygon2DList.CreateFromCircleCollider(circle));
             destructionPolygon = new Polygon2D(newPolygon);
@@ -59,14 +62,30 @@ public class ProjectileController : MonoBehaviour {
             // Destroy all projectiles
             // TODO put this somewhere better, you sexy beast
             var projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+            var collectables = GameObject.FindGameObjectsWithTag("Collectable");
 
-            foreach (var GameObject in projectiles)
+            foreach (var projectile in projectiles)
             {
-                Destroy (GameObject);
+                Destroy (projectile);
+            }
+
+            foreach (var collectable in collectables)
+            {
+                Destroy(collectable);
+                // TODO autocollect
             }
         }
     }
 
+    void SpawnCollectable(float radius)
+    {
+        for (int i = 0; i < radius; ++i)
+        {
+            Instantiate(collectable, transform.position, Quaternion.identity);
+        }
+    }
+
+    // TODO, make this work
     // Doesn't quite work, but it's a start
     //void FaceTowardsDirectionOfMovement()
     //{
