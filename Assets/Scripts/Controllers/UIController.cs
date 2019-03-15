@@ -47,7 +47,7 @@ public class UIController : MonoBehaviour {
         InHandGoldText.text = "$ " + InHandGold.ToString();
     }
 
-    private static void UpdateProgressUI()
+    public static void UpdateProgressUI()
     {
         var CurrentStage = PlayerStats.StageLevel;
         StageNumberText.text = CurrentStage.ToString();

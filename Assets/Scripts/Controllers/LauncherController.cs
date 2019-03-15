@@ -7,6 +7,8 @@ public class LauncherController : MonoBehaviour {
     public float rateOfLaunch;
     public float rangeToSpawn = 1.2f;
 
+    public static bool isProjectileSpawnEnabled = true;
+
     public GameObject projectile;
 
 	// Use this for initialization
@@ -16,6 +18,8 @@ public class LauncherController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        // TODO why not just check when it gets upgraded?
         rateOfLaunch = IdleProjectileRateOfFireUpgrade.GetCurrentValue();
     }
 
@@ -44,5 +48,17 @@ public class LauncherController : MonoBehaviour {
         }
 
         return new Vector3(x, y, 0f);
+    }
+
+    public void SetProjectileSpawnStatus(bool newStatus)
+    {
+        if (newStatus)
+        {
+            StartCoroutine("LaunchProjectiles");
+        }
+        else
+        {
+            StopCoroutine("LaunchProjectiles");
+        }
     }
 }

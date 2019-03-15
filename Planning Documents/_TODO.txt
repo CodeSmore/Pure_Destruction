@@ -1,0 +1,19 @@
+++TODO++
+
+NOTE: Refactoring is needed
+++ Focus on decoupling, making static variables when possible, ease to 
+knowing where and how to make changes, and ease of reading/understanding
+
+- Black Hole improvements
+	- OnCollection, make black hole react (twitch, aka, slightly enlarge, then go back to 
+	small, or even a black pulsing aura via light or particle system)
+	- Show suction via particle system
+- Have 2 collectors
+	- make sure collectors do not move towards same currency
+- Create shop option to purchase more Collectors
+- Create Resting Heart Rate influencer
+- Create background 'dust' from particle system
+
+
+++ Is there any way to involve choice???
+	- can pertain to the fact that not all resources can be gathered...

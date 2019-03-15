@@ -12,6 +12,8 @@ public class ProjectileController : MonoBehaviour {
     private Destruction2DLayer destructionLayer;
 
     private CircleCollider2D circle;
+    private CurrencySpawner currencySpawner;
+    private GameController gameController;
 
     private void Start()
     {
@@ -19,6 +21,9 @@ public class ProjectileController : MonoBehaviour {
 
         destructionLayer = new Destruction2DLayer();
         destructionLayer.SetLayer(0, true);
+
+        currencySpawner = FindObjectOfType<CurrencySpawner>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -56,24 +61,10 @@ public class ProjectileController : MonoBehaviour {
         {
             // Destroy target
             Destroy(targetCollider.transform.parent.gameObject);
-            PlayerStats.StageLevel++;
+
             PlayerStats.InHandDollars += TargetController.targetDestroyReward;
 
-            // Destroy all projectiles
-            // TODO put this somewhere better, you sexy beast
-            var projectiles = GameObject.FindGameObjectsWithTag("Projectile");
-            var collectables = GameObject.FindGameObjectsWithTag("Collectable");
-
-            foreach (var projectile in projectiles)
-            {
-                Destroy (projectile);
-            }
-
-            foreach (var collectable in collectables)
-            {
-                Destroy(collectable);
-                // TODO autocollect
-            }
+            gameController.StartEndGameSequence();
         }
     }
 
@@ -81,7 +72,7 @@ public class ProjectileController : MonoBehaviour {
     {
         for (int i = 0; i < radius; ++i)
         {
-            Instantiate(collectable, transform.position, Quaternion.identity);
+            currencySpawner.SpawnNewCurrency(transform.position);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boundary : MonoBehaviour {
 
-    private BoxCollider2D collider;
+    private new BoxCollider2D collider;
 
 	// Use this for initialization
 	void Start () {

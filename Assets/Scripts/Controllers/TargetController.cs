@@ -12,12 +12,13 @@ public class TargetController : MonoBehaviour {
     public static int targetHitReward;
     public static int targetDestroyReward;
 
+    private void Start()
+    {
+        AddTarget();
+    }
+
     private void Update()
     {
-        if (!TargetExists())
-        {
-            AddTarget();
-        }
         RotateTarget();    
     }
 
@@ -30,14 +31,13 @@ public class TargetController : MonoBehaviour {
         return false;
     }
 
-    void AddTarget()
+    public void AddTarget()
     {
         int stage = Mathf.Clamp(PlayerStats.StageLevel, 1, Targets.Length) - 1;
 
         var newTargetInstance = Instantiate(Targets[stage], transform);
         var newTarget = newTargetInstance.GetComponentInChildren<TargetProperties>();
 
-        Debug.Log(newTarget.GetHitReward());
         targetResistance = newTarget.GetTargetResistance();
         targetHitReward = newTarget.GetHitReward();
         targetDestroyReward = newTarget.GetDestroyReward();

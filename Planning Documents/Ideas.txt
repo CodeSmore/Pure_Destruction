@@ -1,0 +1,37 @@
+++Ideas++
+
+** Something to destroy collectors **
+
+Pros: 
+- new dimension to gameplay
+
+Cons:
+- player frustration over losing resource
+- waiting times / cost inefficiency to get them back
+
+** Currencies explode out from target, then stop, rather than constantly moving
+
+Pros:
+- easier to collect non-moving targets 
+	- less "lost" currency 
+- player feels less waste
+
+Cons:
+- less impact of the collectors as a mechanic
+( they're no longer doing something to counter the difficulty of the player)
+
+Thinking point: 
+- is "loss" a good thing in a game?
+	- loss = being unable to collect everything on screen and having to make choices
+	- Perhaps, loss is ok, so long as choice is involved
+	
+** Collectors can have mini-collectors that bring currency to them **
+
+Pros:
+- complexity (gameplay)
+- fun to see all the minis running around collecting for the biggie
+- makes capacity of collector more relevant (new way to upgrade)
+
+Cons:
+- large collectors become less important (quantity)
+- complexity (building + maintaining)
