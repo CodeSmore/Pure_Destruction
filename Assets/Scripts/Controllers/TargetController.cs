@@ -12,9 +12,20 @@ public class TargetController : MonoBehaviour {
     public static int targetHitReward;
     public static int targetDestroyReward;
 
+    private CurrencySpawner currencySpawner;
+    private GameController gameController;
+    private Destruction2DLayer destructionLayer;
+
+
     private void Start()
     {
         AddTarget();
+
+        currencySpawner = FindObjectOfType<CurrencySpawner>();
+        gameController = FindObjectOfType<GameController>();
+
+        destructionLayer = new Destruction2DLayer();
+        destructionLayer.SetLayer(0, true);
     }
 
     private void Update()
@@ -29,6 +40,42 @@ public class TargetController : MonoBehaviour {
             return true; 
         }
         return false;
+    }
+
+    public void DamageTarget(Collider2D targetCollider, CircleCollider2D circleColliderOfProjectile)
+    {
+        if (targetCollider.gameObject.name == "Map")
+        {
+            DamageTargetMap(circleColliderOfProjectile);
+        }
+        else if (targetCollider.gameObject.name == "WeakSpot")
+        {
+            PlayerStats.InHandDollars += TargetController.targetDestroyReward;
+
+            gameController.StartEndGameSequence();
+
+            Destroy(targetCollider.transform.parent.gameObject);
+        }
+    }
+
+    void DamageTargetMap(CircleCollider2D circleColliderOfProjectile)
+    {
+        circleColliderOfProjectile.radius = IdleProjectileDamageUpgrade.GetCurrentValue() - TargetController.targetResistance;
+
+        if (circleColliderOfProjectile.radius <= 0)
+        {
+            circleColliderOfProjectile.radius = 0;
+            // TODO spawn paticle system and/or sound effect that shows no dmg is done
+            return;
+        }
+
+        SpawnCollectables(circleColliderOfProjectile.radius, circleColliderOfProjectile.transform.position);
+
+        // create polygon object that will be taken from target sprite and collider
+        var newPolygon = new Polygon2D(Polygon2DList.CreateFromCircleCollider(circleColliderOfProjectile));
+        Polygon2D destructionPolygon = new Polygon2D(newPolygon);
+
+        Destruction2D.DestroyByPolygonAll(destructionPolygon, destructionLayer);
     }
 
     public void AddTarget()
@@ -46,5 +93,13 @@ public class TargetController : MonoBehaviour {
     void RotateTarget()
     {
         transform.Rotate(new Vector3(0, 0, rotationSpeed));
+    }
+
+    void SpawnCollectables(float radius, Vector3 spawnPosition)
+    {
+        for (int i = 0; i < radius; ++i)
+        {
+            currencySpawner.SpawnNewCurrency(spawnPosition);
+        }
     }
 }

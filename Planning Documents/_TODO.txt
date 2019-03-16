@@ -13,7 +13,15 @@ knowing where and how to make changes, and ease of reading/understanding
 - Create shop option to purchase more Collectors
 - Create Resting Heart Rate influencer
 - Create background 'dust' from particle system
-
+- Add effect when target is damaged
+- Add effect when target takes NO damage (calculated dmg radius is 0)
+	- TODO in ProjectileController
+- Move Projectiles to "pooling system" rather than Instantiate+Destroy
 
 ++ Is there any way to involve choice???
 	- can pertain to the fact that not all resources can be gathered...
+	
+	
+side note: 
+- 'Ctrl + .' refactors highlighted code to new method
+- It may be smart to put all input related actions in a single class, then call methods
