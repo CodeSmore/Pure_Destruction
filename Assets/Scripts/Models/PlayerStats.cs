@@ -37,6 +37,14 @@ public class PlayerStats : MonoBehaviour {
         }
     }
 
+    public static void IncreaseInHandCurrency(int amountToAdd)
+    {
+        InHandDollars += amountToAdd;
+
+        // text element animation
+        AnimationController.PlayAddCurrencyAnimation();
+    }
+
     private void OnDestroy()
     {
         if (!isTestData)

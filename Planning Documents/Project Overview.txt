@@ -1,0 +1,23 @@
+++ Project Overview ++
+
+Summary: 
+
+The goal is to create an idle/incremental game that is engaging, yet
+calming and aesthetically satisfying.
+
+Influencers:
+
+Bomber - Idle game that shows a planet being bombarded by explosives.
+	Each impact shows chunks of the planet being destroyed, eventually
+	exposing the weak center. When the center is hit, the level ends,
+	and a new one begins, with a planet of increased resistance and 
+	occasionally a gimmik (such as a orbiting obstacles). A big reason
+	for me liking this game is the pleasing nature of the visual
+	representation of progress and the calming vibration of the phone
+	w/ each impact.
+	
+Core Ideals:
+
+- Satisfying feedback from the game
+- Compelling progression
+- Calming/soothing

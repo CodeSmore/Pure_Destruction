@@ -29,7 +29,7 @@ public class Currency : MonoBehaviour
 
     void CollectCurrency()
     {
-        PlayerStats.InHandDollars += value;
+        PlayerStats.IncreaseInHandCurrency(value);
         UIController.UpdateUI();
 
         Destroy(gameObject);
