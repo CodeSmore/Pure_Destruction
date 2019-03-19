@@ -7,8 +7,8 @@
 	- Show suction via particle system
 	- Make BlackHole event time-based
 		-Rather than spawning new target as soon as all currency 
-			is collected, add a second delay and something visual 
-			that shows it's done
+			is collected, add a second delay and animation of blackhole
+			calapsing on self
 - Have 2 collectors
 	- make sure collectors do not move towards same currency
 - Create shop option to purchase more Collectors

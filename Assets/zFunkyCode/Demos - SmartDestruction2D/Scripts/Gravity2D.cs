@@ -9,7 +9,7 @@ public class Gravity2D : MonoBehaviour {
 	Rigidbody2D body;
 
     public float gravityModifier = 2f;
-    public float blackHoleModifier = -20f;
+    public float blackHoleModifier = -10f;
     private Vector2 targetPosition;
 
     private static string State = "pushed";
