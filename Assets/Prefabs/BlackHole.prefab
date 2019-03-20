@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1221424539967075288}
   - component: {fileID: 1221424539967075289}
   - component: {fileID: 1221424539967075238}
-  - component: {fileID: 2840278226869022730}
   - component: {fileID: 2903779685881970663}
+  - component: {fileID: 2840278226869022730}
   m_Layer: 0
   m_Name: BlackHole
   m_TagString: Collector
@@ -98,19 +98,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.0000038146973}
   serializedVersion: 2
   m_Radius: 3.35
---- !u!114 &2840278226869022730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221424539967075236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9165529825ff3c0479ba805f7cbf62dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeOutStrength: 0.2
 --- !u!95 &2903779685881970663
 Animator:
   serializedVersion: 3
@@ -130,3 +117,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2840278226869022730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221424539967075236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9165529825ff3c0479ba805f7cbf62dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutStrength: 0.2

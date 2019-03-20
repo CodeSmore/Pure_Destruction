@@ -1,14 +1,13 @@
 ++TODO++
 
 - Black Hole improvements
-	- OnCollection, make black hole react (twitch, aka, slightly enlarge, 
-	then go back to small, or even a black pulsing aura via light 
-	or particle system)
 	- Show suction via particle system
-	- Make BlackHole event time-based
-		-Rather than spawning new target as soon as all currency 
-			is collected, add a second delay and animation of blackhole
-			calapsing on self
+		+ play particle system on awake
+		+ Once 'BlackHole' appears, restart particle effect, then enable 
+			velocity over lifetime (necessary to reset timer)
+		+ On new stage, disable velocity over lifetime and restart effect
+		- Reseed the particle random seed
+		- When 'BlackHole' begins to contract, increase speed of particle inward movement
 - Have 2 collectors
 	- make sure collectors do not move towards same currency
 - Create shop option to purchase more Collectors

@@ -10,12 +10,14 @@ public class GameController : MonoBehaviour
     private LauncherController launcherController;
 
     private GameObject blackHoleInstance;
+    private ParticleSystem mainBackgroundParticleSystem;
 
     // Start is called before the first frame update
     void Start()
     {
         targetController = FindObjectOfType<TargetController>();
         launcherController = FindObjectOfType<LauncherController>();
+        mainBackgroundParticleSystem = GameObject.Find("BackgroundParticleSystem").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -40,8 +42,13 @@ public class GameController : MonoBehaviour
         Gravity2D.ChangeState();
 
         CollectorMovement.SendCollectorsHome();
-        // stop spawning projectiles
-        // TODO make sure to turn it back on 
+
+        // cannot enable module directly from particle system reference,
+        // so added a temp var to make the change
+        var volt = mainBackgroundParticleSystem.velocityOverLifetime;
+        volt.enabled = true;
+        mainBackgroundParticleSystem.Clear();
+        mainBackgroundParticleSystem.Play();
     }
 
     public void StartNextStage()
@@ -54,6 +61,15 @@ public class GameController : MonoBehaviour
 
         CollectorMovement.DeployCollectors();
         launcherController.SetProjectileSpawnStatus(true);
+
+        
+        // cannot enable module directly from particle system reference,
+        // so added a temp var to make the change
+        var volt = mainBackgroundParticleSystem.velocityOverLifetime;
+        volt.enabled = false;
+        mainBackgroundParticleSystem.Clear();
+        mainBackgroundParticleSystem.Play();
+
 
         Gravity2D.ChangeState();
     }

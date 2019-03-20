@@ -61,10 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BlackHole.cs" />
+    <Compile Include="Assets\Scripts\CollectorMovement.cs" />
     <Compile Include="Assets\Scripts\Controllers\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Controllers\Boundary.cs" />
+    <Compile Include="Assets\Scripts\Controllers\CurrencyController.cs" />
     <Compile Include="Assets\Scripts\Controllers\CustomDestruction2DController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\GroundController.cs" />
     <Compile Include="Assets\Scripts\Controllers\LauncherController.cs" />
     <Compile Include="Assets\Scripts\Controllers\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Scripts\Controllers\ProjectileController.cs" />
@@ -72,17 +76,13 @@
     <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
     <Compile Include="Assets\Scripts\Controllers\TestData.cs" />
     <Compile Include="Assets\Scripts\Controllers\UIController.cs" />
+    <Compile Include="Assets\Scripts\Currency.cs" />
+    <Compile Include="Assets\Scripts\CurrencySpawner.cs" />
     <Compile Include="Assets\Scripts\Gravity.cs" />
-    <Compile Include="Assets\Scripts\GroundController.cs" />
     <Compile Include="Assets\Scripts\Models\IdleProjectile.cs" />
     <Compile Include="Assets\Scripts\Models\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\TargetProperties.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\BlackHole.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\CollectorMovement.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\Currency.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\CurrencyController.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\CurrencySpawner.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\DummyCurrencySpawner.cs" />
     <Compile Include="Assets\Scripts\V2int.cs" />
     <Compile Include="Assets\zFunkyCode\Demos - SmartDestruction2D\Scripts\Cloud.cs" />
     <Compile Include="Assets\zFunkyCode\Demos - SmartDestruction2D\Scripts\DemoClouds.cs" />
