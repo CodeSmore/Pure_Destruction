@@ -1,8 +1,8 @@
-build/
-builds/
-bin/
-debug/
-Library/
-obj/
-Temp/
-UnityVs/
+/[Bb]uild/
+/[Bb]uilds/
+/[Bb]in/
+/[Dd]ebug/
+/[Ll]ibrary/
+/[Oo]bj/
+/[Tt]emp/
+/[Uu]nityVs/
