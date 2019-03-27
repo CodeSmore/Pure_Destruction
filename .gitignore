@@ -1,0 +1,8 @@
+build/
+builds/
+bin/
+debug/
+Library/
+obj/
+Temp/
+UnityVs/
