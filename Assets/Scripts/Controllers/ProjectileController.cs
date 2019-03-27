@@ -13,12 +13,16 @@ public class ProjectileController : MonoBehaviour {
     private CurrencySpawner currencySpawner;
     private GameController gameController;
 
+    ObjectPooler objectPooler;
+
     private void Start()
     {
         circleColliderOfProjectile = GetComponent<CircleCollider2D>();
 
         currencySpawner = FindObjectOfType<CurrencySpawner>();
         gameController = FindObjectOfType<GameController>();
+
+        objectPooler = ObjectPooler.Instance;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -27,8 +31,11 @@ public class ProjectileController : MonoBehaviour {
         {
             TargetController hitTargetController = collider.transform.parent.GetComponentInParent<TargetController>();
             hitTargetController.DamageTarget(collider, circleColliderOfProjectile);
-            
-            Destroy(gameObject);
+
+            // Spawn hit effect
+            objectPooler.SpawnFromPool("DestructionParticleSystem", transform.position, Quaternion.identity);
+
+            gameObject.SetActive(false);
         } 
     }
 }

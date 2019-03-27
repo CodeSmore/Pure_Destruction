@@ -60,6 +60,7 @@ public class TargetController : MonoBehaviour {
 
     void DamageTargetMap(CircleCollider2D circleColliderOfProjectile)
     {
+        float initialRadius = circleColliderOfProjectile.radius;
         circleColliderOfProjectile.radius = IdleProjectileDamageUpgrade.GetCurrentValue() - TargetController.targetResistance;
 
         if (circleColliderOfProjectile.radius <= 0)
@@ -76,6 +77,9 @@ public class TargetController : MonoBehaviour {
         Polygon2D destructionPolygon = new Polygon2D(newPolygon);
 
         Destruction2D.DestroyByPolygonAll(destructionPolygon, destructionLayer);
+
+        // reset collider radius
+        circleColliderOfProjectile.radius = initialRadius;
     }
 
     public void AddTarget()

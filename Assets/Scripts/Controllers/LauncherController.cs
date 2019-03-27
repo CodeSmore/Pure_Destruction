@@ -9,10 +9,12 @@ public class LauncherController : MonoBehaviour {
 
     public static bool isProjectileSpawnEnabled = true;
 
-    public GameObject projectile;
+    ObjectPooler objectPooler;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        objectPooler = ObjectPooler.Instance;
+
         StartCoroutine("LaunchProjectiles");
 	}
 	
@@ -27,7 +29,7 @@ public class LauncherController : MonoBehaviour {
     {
         for (;;)
         {
-            Instantiate(projectile, CalculateStartPosition(), Quaternion.identity);
+            objectPooler.SpawnFromPool("Projectile", CalculateStartPosition(), Quaternion.identity);
 
             yield return new WaitForSeconds(1 / rateOfLaunch);
         }

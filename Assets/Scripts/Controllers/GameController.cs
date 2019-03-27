@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
         var projectiles = GameObject.FindGameObjectsWithTag("Projectile");
         foreach (var projectile in projectiles)
         {
-            Destroy(projectile);
+            projectile.gameObject.SetActive(false);
         }
 
         blackHoleInstance = Instantiate(BlackHole) as GameObject;

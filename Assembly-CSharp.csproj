@@ -68,7 +68,6 @@
     <Compile Include="Assets\Scripts\Controllers\Boundary.cs" />
     <Compile Include="Assets\Scripts\Controllers\CurrencyController.cs" />
     <Compile Include="Assets\Scripts\Controllers\CustomDestruction2DController.cs" />
-    <Compile Include="Assets\Scripts\Controllers\DestructionParticleSystemController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GroundController.cs" />
     <Compile Include="Assets\Scripts\Controllers\LauncherController.cs" />
@@ -85,6 +84,9 @@
     <Compile Include="Assets\Scripts\Models\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\TargetProperties.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\DestructionParticleSystemController.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\IPooledObject.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\V2int.cs" />
     <Compile Include="Assets\zFunkyCode\Demos - SmartDestruction2D\Scripts\Cloud.cs" />
     <Compile Include="Assets\zFunkyCode\Demos - SmartDestruction2D\Scripts\DemoClouds.cs" />
