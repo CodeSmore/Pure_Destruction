@@ -61,12 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BackgroundParticleSystem.cs" />
     <Compile Include="Assets\Scripts\BlackHole.cs" />
     <Compile Include="Assets\Scripts\CollectorMovement.cs" />
     <Compile Include="Assets\Scripts\Controllers\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Controllers\Boundary.cs" />
     <Compile Include="Assets\Scripts\Controllers\CurrencyController.cs" />
     <Compile Include="Assets\Scripts\Controllers\CustomDestruction2DController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\DestructionParticleSystemController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GroundController.cs" />
     <Compile Include="Assets\Scripts\Controllers\LauncherController.cs" />

@@ -1,18 +1,9 @@
 ++TODO++
 
-- Black Hole improvements
-	- Show suction via particle system
-		+ play particle system on awake
-		+ Once 'BlackHole' appears, restart particle effect, then enable 
-			velocity over lifetime (necessary to reset timer)
-		+ On new stage, disable velocity over lifetime and restart effect
-		- Reseed the particle random seed
-		- When 'BlackHole' begins to contract, increase speed of particle inward movement
 - Have 2 collectors
 	- make sure collectors do not move towards same currency
 - Create shop option to purchase more Collectors
 - Create Resting Heart Rate influencer
-- Create background 'dust' from particle system
 - Add effect when target is damaged
 - Add effect when target takes NO damage (calculated dmg radius is 0)
 	- TODO in ProjectileController, but move to separate script

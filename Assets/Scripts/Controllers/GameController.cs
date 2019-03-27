@@ -43,12 +43,7 @@ public class GameController : MonoBehaviour
 
         CollectorMovement.SendCollectorsHome();
 
-        // cannot enable module directly from particle system reference,
-        // so added a temp var to make the change
-        var volt = mainBackgroundParticleSystem.velocityOverLifetime;
-        volt.enabled = true;
-        mainBackgroundParticleSystem.Clear();
-        mainBackgroundParticleSystem.Play();
+        BackgroundParticleSystem.StartStageOneOfBlackHoleSuction();
     }
 
     public void StartNextStage()
@@ -62,14 +57,7 @@ public class GameController : MonoBehaviour
         CollectorMovement.DeployCollectors();
         launcherController.SetProjectileSpawnStatus(true);
 
-        
-        // cannot enable module directly from particle system reference,
-        // so added a temp var to make the change
-        var volt = mainBackgroundParticleSystem.velocityOverLifetime;
-        volt.enabled = false;
-        mainBackgroundParticleSystem.Clear();
-        mainBackgroundParticleSystem.Play();
-
+        BackgroundParticleSystem.EndBlackHoleSuction();
 
         Gravity2D.ChangeState();
     }

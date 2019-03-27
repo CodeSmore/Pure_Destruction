@@ -48,6 +48,7 @@ public class BlackHole : MonoBehaviour
     public void StartFadeAway()
     {
         isFadingAway = true;
+        BackgroundParticleSystem.StartStageTwoOfBlackHoleSuction();
     }
 
     void EndFadeAway()
